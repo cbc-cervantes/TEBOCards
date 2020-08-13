@@ -1,0 +1,21 @@
+.register-page{
+  --bg-color: var(--dark-green);
+}
+
+section.register{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+
+  img{
+    width: 80px;
+    transform: rotate(25deg);
+    border-radius: 10px;
+    box-shadow: -8px -8px 0 1px rgba(0,0,0,.3);
+  }
+
+  form{
+    --line-color:var(--green)
+  }
+}

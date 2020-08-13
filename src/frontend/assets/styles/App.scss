@@ -1,0 +1,138 @@
+@import url("https://necolas.github.io/normalize.css/8.0.1/normalize.css");
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;600;700;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Fredoka+One&display=swap');
+@import "Vars.scss";
+@import "Keyframes.scss";
+
+body{
+  font-family: 'Nunito', sans-serif;
+  --bg-color:var(--dark-purple);
+  color: white;
+  transition: all .5s;
+  background-color: var(--bg-color);
+  box-sizing: border-box;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  font-size: 16px;
+}
+
+div#root{
+  width: 95%;
+  max-width: 1230px;
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+}
+
+section{
+  height: 100%;
+  animation: var(--anim-slide-in);
+  display: block;
+}
+
+a{
+  text-decoration: none;
+}
+
+input, button{
+  cursor: text;
+  border: none;
+  color: white;
+  padding: 15px;
+  margin:5px;
+  box-sizing: border-box;
+  border-radius: 15px;
+  outline: none;
+}
+
+button{
+  cursor: pointer;
+  font-weight: 600;
+  background-color: var(--red);
+  position: relative;
+  &:active:after{
+    content: "";
+    border-radius: inherit;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,.2);
+    position: absolute;
+    left: 0;
+    top: 0;
+  }
+  &:focus{
+    box-shadow: 0 0 5px 0 rgba(0,0,0,.7);
+  }
+}
+
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+textarea:-webkit-autofill,
+textarea:-webkit-autofill:hover,
+textarea:-webkit-autofill:focus,
+select:-webkit-autofill,
+select:-webkit-autofill:hover,
+select:-webkit-autofill:focus {
+  -webkit-text-fill-color: rgba(255, 255, 255, 0.8);
+  transition: background-color 50000s ease-in-out 0s;
+}
+
+form{
+  --line-color:var(--red);
+  color: rgba(255, 255, 255, 0.9);
+  width: 80%;
+  max-width: 450px;
+
+  input, button{
+    width: 100%;
+    margin:0;
+  }
+
+  label{
+    display: block;
+    position: relative;
+    margin-top: 25px;
+    font-size: 16px;
+
+    &:first-child{
+      margin-top: 0;
+    }
+
+    span{
+      position: absolute;
+      left:10px;
+      top: calc(50% - 10px);
+      transition: all .2s;
+      padding: 0 5px;
+      cursor: text;
+    }
+
+
+
+    input{
+
+      border:solid 1px rgba(255, 255, 255, 0.7);
+      outline: none;
+      background: none;
+      transition: all .4s;
+      &:focus, &:valid, &[empty="false"]{
+        & + span{
+          color: var(--line-color);
+          background-color: var(--bg-color);
+          top: -8px;
+          font-size: 14px;
+        }
+        & {
+          border-color: var(--line-color);
+          box-shadow: 0 0 0 1px var(--line-color);
+        }
+
+      }
+    }
+  }
+  button{
+    background-color:var(--line-color);
+    margin-top: 25px;
+  }
+}

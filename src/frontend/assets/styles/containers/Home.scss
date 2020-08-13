@@ -1,0 +1,71 @@
+section.home{
+  //border:solid red;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  .hero{
+    width: 43%;
+    max-width:300px;
+    .cards{
+      position: relative;
+      img{
+        width: 100%;
+        box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.28);
+        border-radius: 10%;
+      }
+      .card-left ,.card-right{
+        width: 90%;
+        position: absolute;
+        bottom: -50px;
+      }
+      .card-left{
+        left: -50%;
+        z-index: -1;
+        transform: rotate(-25deg);
+        animation: var(--anim-pop-in);
+      }
+      .card-right{
+        right: -50%;
+        transform: rotate(25deg);
+        animation: var(--anim-pop-in) .1s;
+        z-index: -1;
+      }
+    }
+    img{
+      width: 100%;
+    }
+    button{
+      font-family: 'Fredoka One', cursive;
+      font-weight: 400;
+      margin-top: 60px;
+      border-radius: 20px;
+      width: 100%;
+      font-size: 40px;
+      padding: 10px 5px;
+      position: relative;
+
+      &:active{
+        transform: translateY(3px);
+
+        &:after{
+          display: none;
+        }
+      }
+
+      &:after{
+        content: "";
+        height: 100%;
+        width: 100%;
+        background-color: #983737;
+        position: absolute;
+        bottom: -5px;
+        left: 0;
+        z-index: -1;
+        border-radius: inherit;
+
+      }
+    }
+  }
+
+}

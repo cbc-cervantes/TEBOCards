@@ -1,0 +1,33 @@
+.play-page{
+  --bg-color: var(--pink);
+}
+
+section.game{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+
+  hr{
+    width: 90%;
+    max-width:500px ;
+    margin: 40px;
+    border-color: rgba(255, 255, 255, 0.57);
+    border-bottom: none;
+    position: relative;
+    &:after{
+      content: "ó";
+      background-color: var(--bg-color);
+      position: absolute;
+      left: 49%;
+      top: -15px;
+      padding: 5px;
+    }
+  }
+  h1{
+    margin-top: 0;
+    text-align: center;
+  }
+
+
+}

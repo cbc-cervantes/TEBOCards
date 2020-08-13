@@ -1,0 +1,24 @@
+:root{
+  --anim-pop-in: POP-IN  .5s forwards;
+  --anim-slide-in: SLIDE-IN .5s forwards;
+}
+
+@keyframes SLIDE-IN {
+  from{
+    opacity: 0;
+    transform: translate(20px);
+  }
+  to{
+    opacity: 1;
+    transform: translate(0);
+  }
+}
+
+@keyframes POP-IN {
+  from{
+    bottom: -50px;
+  }
+  to{
+    bottom: -20px;
+  }
+}
